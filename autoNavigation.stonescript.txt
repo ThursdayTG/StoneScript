@@ -1,0 +1,202 @@
+
+func autoNavigation()
+// FUNCTION BEGIN
+  //...
+// FUNCTION END
+
+
+
+
+/*
+func autoMove()
+  ? ai.walking
+    equipL Triskelion Stone
+
+  dashStaff()
+  return
+
+var  dashStaffRange = 5
+func dashStaff()
+  ? item.CanActivate()
+^ & item.GetCooldown("quarterstaff") <= 0
+^ & pickupDistance  > dashStaffRange
+^ & harvestDistance > dashStaffRange
+^ & foeDistance     > dashStaffRange
+    equip    Quarterstaff
+    activate R
+
+  return
+
+
+var  pickupDistance
+     pickupDistance = pickup.distance
+var  pickupRange
+func autoPickup()
+  ? pickup = treasure
+    pickupRange = 46
+  :
+    pickupRange = 5
+
+  ? ai.walking & pickupDistance <= pickupRange
+    equipR Star Stone
+  return
+
+
+var  harvestDistance
+     harvestDistance = harvest.distance
+var  harvestRange    = 5
+func autoHarvest()
+  ? harvestDistance <= harvestRange
+    equipR Star Stone
+  return
+
+
+
+var  foeDistance
+     foeDistance = foe.distance
+var  foeName
+     foeName = foe.name
+
+var  spawnerAlive = false
+
+var  ranged = 15
+var  melee = 10
+var  combatRange
+
+func autoCombat()
+  ? spawnerAlive & item.right.state = 4
+    spawnerAlive = false
+
+  ? foeName = "scarab"
+    combatRange = melee
+  :?foeName = "poena"
+    combatRange = melee
+  :?foeName = "xylo"
+    combatRange = melee
+  :
+    combatRange = ranged
+
+  ? foeDistance <= combatRange
+^ & !dashDash() & !dashBash()
+    ? combatRange = ranged
+  ^ & foeName = "R.I.P." & foe.hp > 0
+      spawnerAlive = true
+
+    ? spawnerAlive
+      equip Gatling Crossbow
+      return
+
+
+    ? combatRange = melee
+      ? item.right ! bardiche
+    ^ | (item.right = bardiche
+    ^ &  item.right.state ! 2)
+        ? foe.buffs.string ! "mirror"
+      ^ & foeName ! "Xyloalgia"
+          equip Heavy Hammer
+        :? foeName = "xylo"
+          equipL Big Ice Sword
+          equipR Vigor Sword dL
+        :
+          equipL Vigor Wand dL
+          equipR Vigor Sword dL
+
+      ? item.CanActivate()
+    ^ & item.GetCooldown("bardiche") <= 0
+    ^ & foe = boss
+        equip Bardiche
+        activate R
+      return
+
+    ? (combatRange = ranged & ai.walking)
+  ^ | string.Equals(item.right, "")
+  ^ | (combatRange = ranged
+  ^ &  item.right = "ashing Shield")
+      equipR Vigor Wand dL
+
+    ? combatRange = ranged & !ai.walking
+      equip Gatling Crossbow
+
+
+var  dashDashRangeMin
+     dashDashRangeMin = 11
+var  dashDashRangeMax
+     dashDashRangeMax = 15
+func dashDash()
+  ? item.CanActivate()
+^ & item.GetCooldown("dash") <= 0
+^ & foeDistance >= dashDashRangeMin
+^ & foeDistance <= dashDashRangeMax
+    equipR Dashing Shield
+    return true
+  :
+    return false
+
+var  dashBashRangeMin
+     dashBashRangeMin = 11
+var  dashBashRangeMax
+     dashBashRangeMax = 15
+func dashBash()
+  ? item.CanActivate()
+^ & item.GetCooldown("bash") <= 0
+^ & foeDistance >= dashBashRangeMin
+^ & foeDistance <= dashBashRangeMax
+    equipR Bashing Shield
+    return true
+  :
+    return false
+
+
+func autoHeal()
+  ? hp <= foe.damage
+    activate potion
+
+  ? foe = boss & hp <= (foe.damage*3)
+    activate potion
+
+  ? hp < 10
+    activate potion
+
+  return
+
+
+var treasureCount
+    treasureCount = item.GetTreasureCount()
+var treasureLimit
+    treasureLimit = item.GetTreasureLimit()
+func autoQuit()
+  ? treasureCount = treasureLimit
+    loc.Leave()
+  :
+    return
+
+
+
+
+var prin = import Custom/printInfo.stonescript
+
+
+
+
+func main()
+
+  prin.printInfo(treasureCount, treasureLimit)
+
+
+  autoMove()
+  autoPickup()
+  autoCombat()
+  autoHeal()
+
+//  ? pickup = treasure
+//    autoQuit()
+
+  return
+
+
+
+
+main()
+
+*/
+

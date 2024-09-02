@@ -1,0 +1,12 @@
+
+func setup()
+// FUNCTION BEGIN
+  ? loc.name = "Waterfall"
+    equip  Quarterstaff
+    equipR Quest Stone
+    import Fishing
+    return
+
+  disable hud
+  return
+// FUNCTION END

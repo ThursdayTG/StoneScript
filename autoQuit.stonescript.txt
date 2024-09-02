@@ -1,0 +1,11 @@
+// script written for game version v3.68.1
+
+
+func autoQuit()
+// FUNCTION BEGIN
+  ? item.GetTreasureCount()
+^ = item.GetTreasureLimit()
+    loc.Leave()
+  :
+    return
+// FUNCTION END

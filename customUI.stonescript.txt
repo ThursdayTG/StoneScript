@@ -1,0 +1,144 @@
+
+func customUI()
+// FUNCTION BEGIN
+  var tab_1 = ui.AddButton()
+  tab_1.x = 0
+  tab_1.y = 0
+  tab_1.text = ">"
+// FUNCTION END
+
+
+
+
+/*
+func printInfo(treasureCount, treasureLimit)
+  var padding = "#"
+
+  ? treasureCount < 10
+    padding += "#"
+
+  var str = ""
+  str
+  ^ = "\n" + "##┌-─-┐"
+  ^ + "\n" + "##╞╤8╤╡"
+  ^ + "\n" + "##└┴─┴┘"
+  ^ + "\n" + padding
+  ^ + treasureCount + "/" + treasureLimit
+
+  var x = 1
+  var y = 1
+  var c = "#white"
+  >`@x@,@y@,@c@,@str@
+  /*`*
+
+/**
+  x = 1
+  y = 7
+  c = "#white"
+
+  var foeArray
+  foeArray = string.Split(foe, " ", false)
+
+  var tempArray
+  tempArray = string.Split(foe.name, " ", false)
+
+  ? tempArray.Count() >= 2
+    for i = 0..(tempArray.Count()-2)
+      foeArray[i+2] = ""
+
+  ? foeArray.Count() > 0
+    foeArray[1] = string.Join(
+    ^" ", tempArray, 0, tempArray.Count())
+
+  str = "foe:"
+  for element : foeArray
+    ? !(string.Equals(element, ""))
+      str += "\n##" + element
+
+  >`@x@,@y@,@c@,@str@
+  /*`*
+/**
+/**
+  x = 1
+  y = 7
+  c = "#white"
+  str = "foe:"
+
+  var foeArray
+  ? foe
+    foeArray = string.Split(
+    ^ foe, " " + foe.name + " ", false)
+
+    foeArray.Insert(1, foe.name)
+
+    ? foeArray[2]
+      var temp
+      temp = string.Split(foeArray[3], " ",
+true)
+      foeArray.RemoveAt(foeArray.Count()-1)
+
+
+    for element : foeArray
+      str += "\n##" + element
+
+    ? temp
+      for element : temp
+        str += "\n##" + element
+
+  >`@x@,@y@,@c@,@str@
+  /*`*
+/**
+
+
+  x = 0
+  y = 0
+  str = "totaltime:" + "\n" + "pb:"
+
+  >`@x@,@y@,@c@,@str@
+  /*`*
+
+
+  var strTotalTime
+      strTotalTime
+  ^ = time.FormatDigital(
+  ^   totaltime, true) + "s"
+  ^ + "#/#"
+  ? totaltime < 1000
+    strTotalTime += "#"
+  ? totaltime < 100
+    strTotalTime += "#"
+  ? totaltime < 10
+    strTotalTime += "#"
+  strTotalTime += totaltime + "f"
+
+  var strBestTime
+      strBestTime
+  ^ = time.FormatDigital(
+  ^   loc.bestTime, true) + "s"
+  ^ + "#/#"
+  ? loc.bestTime < 1000
+    strBestTime += "#"
+  strBestTime += loc.bestTime + "f"
+
+  str = strTotalTime + "\n" + strBestTime
+
+  x = screen.w - string.Size(strBestTime)
+
+  >`@x@,@y@,@c@,@str@
+  /*`*
+
+  x = 1
+  y = screen.h - 4
+
+  str = "item.left:##"
+
+    ^ + item.left
+    ^ + "\n"
+    ^ + "item.right:#"
+    ^ + item.right
+
+  >`@x@,@y@,@c@,@str@
+  /*`*/
+  return
+
+*/

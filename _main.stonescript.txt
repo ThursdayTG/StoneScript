@@ -1,0 +1,55 @@
+////////////////////////////////////////////////
+//                                            //
+// script written for game patch:             //
+//   v3.68.1                                  //
+// patch release date:                        //
+//   2024-08-26                               //
+//                                            //
+// author:                                    //
+//   Thursday, the German one                 //
+//   aka ThursdayTG                           //
+//                                            //
+// special thanks to:                         //
+//   Ket                                      //
+//   ... and the rest of the SSRPG Discord    //
+//                                            //
+////////////////////////////////////////////////
+
+
+
+
+// prevents script from running in
+// safe and special areas
+? loc.stars < 3
+  return
+
+
+// disables vanilla hud to make room for
+// custom ui
+? loc.begin
+  disable hud
+
+
+
+
+import Custom/customUI.stonescript
+
+import Custom/autoCombat.stonescript
+import Custom/autoHarvest.stonescript
+import Custom/autoNavigation.stonescript
+import Custom/autoQuit.stonescript
+
+
+func main()
+// FUNCTION BEGIN
+  customUI()
+
+  autoNavigation()
+  autoHarvest()
+  autoCombat()
+  autoQuit()
+// FUNCTION END
+
+
+main()
+return
