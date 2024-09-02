@@ -7,7 +7,7 @@
 //                                            //
 // author:                                    //
 //   Thursday, the German one                 //
-//   aka ThursdayTG                           //
+//   aka ThursdayTG or thursday_tg            //
 //                                            //
 // special thanks to:                         //
 //   Ket                                      //
@@ -32,22 +32,30 @@
 
 
 
-import Custom/customUI.stonescript
+var customUI =
+^ import Custom/customUI
 
-import Custom/autoCombat.stonescript
-import Custom/autoHarvest.stonescript
-import Custom/autoNavigation.stonescript
-import Custom/autoQuit.stonescript
+var autoCombat =
+^ import Custom/autoCombat
+
+var autoHarvest =
+^ import Custom/autoHarvest
+
+var autoNavigation =
+^ import Custom/autoNavigation
+
+var autoQuit =
+^ import Custom/autoQuit
 
 
 func main()
 // FUNCTION BEGIN
-  customUI()
+  customUI.main()
 
-  autoNavigation()
-  autoHarvest()
-  autoCombat()
-  autoQuit()
+  autoNavigation.main()
+  autoHarvest.main()
+  autoCombat.main()
+  autoQuit.main()
 // FUNCTION END
 
 

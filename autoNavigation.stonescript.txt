@@ -1,5 +1,5 @@
 
-func autoNavigation()
+func main()
 // FUNCTION BEGIN
   //...
 // FUNCTION END

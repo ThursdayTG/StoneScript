@@ -1,5 +1,5 @@
 
-func customUI()
+func main()
 // FUNCTION BEGIN
   var tab_1 = ui.AddButton()
   tab_1.x = 0

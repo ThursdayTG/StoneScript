@@ -1,7 +1,7 @@
 // script written for game version v3.68.1
 
 
-func autoQuit()
+func main()
 // FUNCTION BEGIN
   ? item.GetTreasureCount()
 ^ = item.GetTreasureLimit()
