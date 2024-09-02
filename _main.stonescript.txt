@@ -22,6 +22,9 @@
 // safe and special areas
 ? loc.stars < 3
   return
+:
+  ui.Clear()
+  disable hud
 
 
 
