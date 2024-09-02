@@ -29,6 +29,7 @@
 var customUI =
 ^ import Custom/customUI
 
+
 // defining variable during declaration to
 // prevent the variable resetting.
 // this allows the script to update the UI
@@ -48,6 +49,8 @@ var initialisedUI = 0
     // with other UI scripts
 
   disable hud
+    // disables all non-stonescript UI
+
   customUI.mainInit()
   initialisedUI++
 

@@ -2,25 +2,34 @@
 func mainInit()
 // FUNCTION BEGIN
   var tab_0 = ui.AddButton()
+  var panel_0 = ui.AddPanel()
   buttonInit(tab_0, 0)
+  panelInit(panel_0, 0)
+
 
   var tab_1 = ui.AddButton()
   buttonInit(tab_1, 1)
 
+
   var tab_2 = ui.AddButton()
   buttonInit(tab_2, 2)
+
 
   var tab_3 = ui.AddButton()
   buttonInit(tab_3, 3)
 
+
   var tab_4 = ui.AddButton()
   buttonInit(tab_4, 4)
+
 
   var tab_5 = ui.AddButton()
   buttonInit(tab_5, 5)
 
+
   var tab_6 = ui.AddButton()
   buttonInit(tab_6, 6)
+
 
   var tab_7 = ui.AddButton()
   buttonInit(tab_7, 7)
@@ -46,6 +55,29 @@ func buttonInit(component, id)
   component.h = 3
 
   component.text = "->"
+// FUNCTION END
+
+
+
+
+func panelInit(component, id)
+// FUNCTION BEGIN
+  component.anchor = "top_left"
+  component.dock = "top_left"
+
+  component.x = 3
+  component.y = (id * 3)
+
+  component.w = 4
+  component.h = 3
+// FUNCTION END
+
+
+
+
+func panel_0_show()
+// FUNCTION BEGIN
+  return
 // FUNCTION END
 
 
