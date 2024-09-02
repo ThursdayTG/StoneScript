@@ -1,9 +1,19 @@
 
 func main()
 // FUNCTION BEGIN
+  ui.Clear()
+  disable hud
+
   var tab_1 = ui.AddButton()
+  tab_1.anchor = "top_left"
+  tab_1.dock = "top_left"
+
   tab_1.x = 0
   tab_1.y = 0
+
+  tab_1.w = 5
+  tab_1.h = 3
+
   tab_1.text = ">"
 // FUNCTION END
 
@@ -138,7 +148,7 @@ true)
     ^ + item.right
 
   >`@x@,@y@,@c@,@str@
-  /*`*/
+  /*`*
   return
 
 */

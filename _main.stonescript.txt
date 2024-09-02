@@ -24,12 +24,6 @@
   return
 
 
-// disables vanilla hud to make room for
-// custom ui
-? loc.begin
-  disable hud
-
-
 
 
 var customUI =
