@@ -7,6 +7,42 @@ func main()
 
 
 
+func autoPotion()
+// FUNCTION BEGIN
+  ?  item.potion = potion_berserk
+    return
+  :? item.potion = potion_cleansing
+    return
+  :? item.potion = potion_defensive
+    return
+  :? item.potion = potion_healing
+    ? foe.buffs.string = "mirror"
+      return
+
+    ? hp <= foe.damage
+      activate potion
+
+    ? foe = boss & hp <= (foe.damage*3)
+      activate potion
+
+    return
+  :? item.potion = potion_invisibility
+    return
+  :? item.potion = potion_lightning
+    return
+  :? item.potion = potion_lucky
+    return
+  :? item.potion = potion_strength
+    return
+  :? item.potion = potion_vampiric
+    return
+  :
+    return
+// FUNCTION END
+
+
+
+
 /*
 func autoMove()
   ? ai.walking
