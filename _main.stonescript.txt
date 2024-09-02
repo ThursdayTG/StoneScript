@@ -18,19 +18,18 @@
 
 
 
-// prevents script from running in
-// safe and special areas
+var customUI =
+^ import Custom/customUI
+
 ? loc.stars < 3
   return
 :
   ui.Clear()
   disable hud
+  customUI.mainInit()
 
 
 
-
-var customUI =
-^ import Custom/customUI
 
 var autoCombat =
 ^ import Custom/autoCombat
@@ -47,7 +46,7 @@ var autoQuit =
 
 func main()
 // FUNCTION BEGIN
-  customUI.main()
+  customUI.mainUpdate()
 
   autoNavigation.main()
   autoHarvest.main()

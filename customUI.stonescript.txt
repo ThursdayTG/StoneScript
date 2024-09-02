@@ -1,15 +1,31 @@
 
-func main()
+func mainInit()
 // FUNCTION BEGIN
+  var tab_0 = ui.AddButton()
+  buttonInit(tab_0, 0)
+
   var tab_1 = ui.AddButton()
-  buttonInit(tab_1, 0)
+  buttonInit(tab_1, 1)
 
   var tab_2 = ui.AddButton()
-  buttonInit(tab_2, 1)
+  buttonInit(tab_2, 2)
 
   var tab_3 = ui.AddButton()
-  buttonInit(tab_3, 2)
+  buttonInit(tab_3, 3)
+
+  var tab_4 = ui.AddButton()
+  buttonInit(tab_4, 4)
+
+  var tab_5 = ui.AddButton()
+  buttonInit(tab_5, 5)
+
+  var tab_6 = ui.AddButton()
+  buttonInit(tab_6, 6)
+
+  var tab_7 = ui.AddButton()
+  buttonInit(tab_7, 7)
 // FUNCTION END
+
 
 
 
@@ -21,10 +37,23 @@ func buttonInit(component, id)
   component.x = 0
   component.y = (id * 3)
 
+  ?id < 4
+    component.y = component.y + 1
+  :
+    component.y = component.y + 2
+
   component.w = 4
   component.h = 3
 
   component.text = "->"
+// FUNCTION END
+
+
+
+
+func mainUpdate()
+// FUNCTION BEGIN
+  return
 // FUNCTION END
 
 
