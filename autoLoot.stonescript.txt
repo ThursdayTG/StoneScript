@@ -17,8 +17,7 @@ func autoPickup()
   ? pickup = treasure
     pickupRange = 99
   :
-    pickupRange = 6
-
+    pickupRange = 2
 
   ? pickup.distance <= pickupRange
     equipL Triskelion Stone
@@ -32,21 +31,34 @@ func autoPickup()
 
 func autoHarvest(harvestOverride)
 // FUNCTION BEGIN
-  var harvestTool = ""
-
   ? harvestOverride = 1
     return
-  :?loc.name = Rocky Plateau
+
+
+  var harvestTool = ""
+
+  ? loc.name = Rocky Plateau
     harvestTool = "Shovel"
   :?loc.name = Deadwood Canyon
     harvestTool = "Hatchet"
   :
     return
 
+
   var harvestRange = 6
   ? harvest.distance <= harvestRange
     equipL Triskelion Stone
-    equipR @harvestTool@
+
+    ? harvestTool = Hatchet
+      equipR @harvestTool@
+    :?harvestTool = Shovel
+      equip  @harvestTool@
+
+
+  ? item.right = Hatchet
+^ & item.right.state > 1
+^ & item.GetCooldown("hatchet") < 1
+    activate R
 
   return
 // FUNCTION END

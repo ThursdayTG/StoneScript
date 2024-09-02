@@ -69,7 +69,7 @@ var autoCombat =
 
 var autoLoot =
 ^ import Custom/autoLoot
-var harvestOverride = 0
+var harvestOverride = 1
   // if harvestOverride is enabled, the player
   // won't stop to harvest with shovel & hatchet
   // in their respective locations
