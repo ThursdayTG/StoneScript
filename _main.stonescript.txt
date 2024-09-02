@@ -26,6 +26,7 @@
 
 
 
+/*
 var customUI =
 ^ import Custom/customUI
 
@@ -35,6 +36,11 @@ var customUI =
 // this allows the script to update the UI
 // when reloading it mid-run
 // (e.g. when changing the code).
+// ...
+// this turned out to be false.
+// and the value "PlayMindStoneEdit" as shown
+// in the debug UI is inaccessible with
+// stonescript. :(
 var initialisedUI = 0
 
 
@@ -52,7 +58,8 @@ var initialisedUI = 0
     // disables all non-stonescript UI
 
   customUI.mainInit()
-  initialisedUI++
+  // initialisedUI++
+*/
 
 
 
