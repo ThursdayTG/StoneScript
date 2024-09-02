@@ -18,15 +18,38 @@
 
 
 
+// prevents script from running in
+// safe and special areas
+? loc.stars < 3
+  return
+
+
+
+
 var customUI =
 ^ import Custom/customUI
 
-? loc.stars < 3
-  return
-:
+// defining variable during declaration to
+// prevent the variable resetting.
+// this allows the script to update the UI
+// when reloading it mid-run
+// (e.g. when changing the code).
+var initialisedUI = 0
+
+
+? loc.begin | loc.loop
+  initialisedUI = 0
+
+
+? initialisedUI = 0
   ui.Clear()
+    // note:
+    // ui.Clear() breaks compatibility
+    // with other UI scripts
+
   disable hud
   customUI.mainInit()
+  initialisedUI++
 
 
 
