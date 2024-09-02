@@ -1,20 +1,30 @@
 
 func main()
 // FUNCTION BEGIN
-  ui.Clear()
-  disable hud
-
   var tab_1 = ui.AddButton()
-  tab_1.anchor = "top_left"
-  tab_1.dock = "top_left"
+  buttonInit(tab_1, 0)
 
-  tab_1.x = 0
-  tab_1.y = 0
+  var tab_2 = ui.AddButton()
+  buttonInit(tab_2, 1)
 
-  tab_1.w = 5
-  tab_1.h = 3
+  var tab_3 = ui.AddButton()
+  buttonInit(tab_3, 2)
+// FUNCTION END
 
-  tab_1.text = ">"
+
+
+func buttonInit(component, id)
+// FUNCTION BEGIN
+  component.anchor = "top_left"
+  component.dock = "top_left"
+
+  component.x = 0
+  component.y = (id * 3)
+
+  component.w = 4
+  component.h = 3
+
+  component.text = "->"
 // FUNCTION END
 
 
