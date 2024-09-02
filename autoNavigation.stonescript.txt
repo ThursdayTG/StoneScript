@@ -1,7 +1,7 @@
 
 func main()
 // FUNCTION BEGIN
-  //...
+  return
 // FUNCTION END
 
 
