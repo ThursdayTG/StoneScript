@@ -67,11 +67,15 @@ var initialisedUI = 0
 var autoCombat =
 ^ import Custom/autoCombat
 
-var autoHarvest =
-^ import Custom/autoHarvest
+var autoLoot =
+^ import Custom/autoLoot
+var harvestOverride = 0
+  // if harvestOverride is enabled, the player
+  // won't stop to harvest with shovel & hatchet
+  // in their respective locations
 
-var autoNavigation =
-^ import Custom/autoNavigation
+var autoMovement =
+^ import Custom/autoMovement
 
 var autoQuit =
 ^ import Custom/autoQuit
@@ -79,10 +83,10 @@ var autoQuit =
 
 func main()
 // FUNCTION BEGIN
-  customUI.mainUpdate()
+  // customUI.mainUpdate()
 
-  autoNavigation.main()
-  autoHarvest.main()
+  autoMovement.main()
+  autoLoot.main(harvestOverride)
   autoCombat.main()
   autoQuit.main()
 // FUNCTION END

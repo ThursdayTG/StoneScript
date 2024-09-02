@@ -1,0 +1,52 @@
+
+func main(harvestOverride)
+// FUNCTION BEGIN
+  autoPickup()
+  autoHarvest(harvestOverride)
+
+  return
+// FUNCTION END
+
+
+
+
+func autoPickup()
+// FUNCTION BEGIN
+  var pickupRange
+
+  ? pickup = treasure
+    pickupRange = 99
+  :
+    pickupRange = 6
+
+
+  ? pickup.distance <= pickupRange
+    equipL Triskelion Stone
+    equipR Star Stone
+
+  return
+// FUNCTION END
+
+
+
+
+func autoHarvest(harvestOverride)
+// FUNCTION BEGIN
+  var harvestTool = ""
+
+  ? harvestOverride = 1
+    return
+  :?loc.name = Rocky Plateau
+    harvestTool = "Shovel"
+  :?loc.name = Deadwood Canyon
+    harvestTool = "Hatchet"
+  :
+    return
+
+  var harvestRange = 6
+  ? harvest.distance <= harvestRange
+    equipL Triskelion Stone
+    equipR @harvestTool@
+
+  return
+// FUNCTION END
