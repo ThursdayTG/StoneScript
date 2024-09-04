@@ -36,6 +36,9 @@ var arrayPanel = []
 var arrayText = []
 var arrayContent = []
 
+var panelHeight = 27
+var panelWidth = 50
+
 
 var styleButton = ui.AddStyle("
 ^══╗
@@ -61,6 +64,11 @@ func mainInit()
       arrayText[i].Recycle()
       arrayContent[i].Recycle()
     // }
+
+    arrayButton.Clear()
+    arrayPanel.Clear()
+    arrayText.Clear()
+    arrayContent.Clear()
   // }
 
 
@@ -93,6 +101,7 @@ func mainInit()
 
 
       var cnt = ui.AddText()
+      contentInit(cnt, i)
       arrayPanel[i].Add(cnt)
       arrayContent.Add(cnt)
     // }
@@ -130,8 +139,8 @@ func panelInit(panel, id)
   panel.x = 4
   panel.y = 0
 
-  panel.w = 50
-  panel.h = 27
+  panel.w = panelWidth
+  panel.h = panelHeight
 
   panel.visible = false
   panel.style = stylePanel
@@ -168,6 +177,20 @@ func textInit(text, id)
 
 
   text.visible = false
+// }
+
+
+
+
+func contentInit(content, id)
+// {
+  content.anchor = "top_left"
+  content.dock = "top_left"
+  content.x = 2
+  content.y = 0
+  content.w = panelWidth - 4
+  content.h = panelHeight - 2
+  content.visible = inherit
 // }
 
 
@@ -210,12 +233,55 @@ func buttonToggle(button)
 
 
 
-// game data panel
+
 func panelSetContents(i)
 // {
   ? i = 0
   // {
     var header = "GAME DATA"
+    var n = "\n"
+  // }
+  :?i = 1
+  // {
+    var header = "LOCATION DATA"
+    var n = "\n"
+  // }
+  :?i = 2
+  // {
+    var header = "FOE DATA"
+    var n = "\n"
+
+    var label1 = "foe.name: "
+    var var1 = foe.name
+  // }
+  :?i = 3
+  // {
+    var header = "PLAYER DATA"
+    var n = "\n"
+  // }
+  :?i = 4
+  // {
+    var header = "TOOLBELT"
+    var n = "\n"
+  // }
+  :?i = 5
+  // {
+    var header = "INVENTORY"
+    var n = "\n"
+  // }
+  :?i = 6
+  // {
+    var header = "KEYBOARD SHORTCUTS"
+    var n = "\n"
+  // }
+  :?i = 7
+  // {
+    var header = "SCRIPT OVERRIDES"
+    var n = "\n"
+  // }
+  :?i = 8
+  // {
+    var header = "SCRIPT IMPORTS"
     var n = "\n"
   // }
   :
@@ -226,7 +292,8 @@ func panelSetContents(i)
 
 
   arrayContent[i].text
-^ = header + n
+^ = header + n + n
+^ + label1 + var1
 
   return
 // }

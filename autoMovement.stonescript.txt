@@ -8,8 +8,9 @@ func main()
 
   var dashRange = 5
 
-  ? item.GetCooldown("quarterstaff") < 1
+  ? ai.walking
 ^ & item.CanActivate()
+^ & item.GetCooldown("quarterstaff") < 1
 ^ & foe.distance > dashRange
 ^ & pickup.distance > dashRange
 ^ & harvest.distance > dashRange
