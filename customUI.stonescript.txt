@@ -217,7 +217,7 @@ func buttonToggle(button)
           // }
         // }
 
-        panelSetContents(i)
+        panelContentSet(i)
       // }
       :?arrayPanel[i].visible  // if toggled on
       // {
@@ -234,66 +234,107 @@ func buttonToggle(button)
 
 
 
-func panelSetContents(i)
+func panelContentSet(i)
 // {
+  var n = "\n"
+  var header = ""
+  var panelContent = ""
+
+
   ? i = 0
   // {
-    var header = "GAME DATA"
-    var n = "\n"
+    header = "# GAME DATA "
+
+    panelContent
+  ^ = ""
+  ^ + ""
   // }
   :?i = 1
   // {
-    var header = "LOCATION DATA"
-    var n = "\n"
+    header = "# LOCATION DATA "
+
+    panelContent
+  ^ = "loc string: "
+  ^ + loc
   // }
   :?i = 2
   // {
-    var header = "FOE DATA"
-    var n = "\n"
+    header = "# FOE DATA "
 
-    var label1 = "foe.name: "
-    var var1 = foe.name
+    panelContent
+  ^ = "foe string: "
+  ^ + foe
   // }
   :?i = 3
   // {
-    var header = "PLAYER DATA"
-    var n = "\n"
+    header = "# PLAYER DATA "
+
+    panelContent
+  ^ = "UNDER CONSTRUCTION"
+  ^ + ""
   // }
   :?i = 4
   // {
-    var header = "TOOLBELT"
-    var n = "\n"
+    header = "# TOOLBELT "
+
+    panelContent
+  ^ = "UNDER CONSTRUCTION"
+  ^ + ""
   // }
   :?i = 5
   // {
-    var header = "INVENTORY"
-    var n = "\n"
+    header = "# INVENTORY "
+
+    panelContent
+  ^ = ""
+  ^ + "[color=#808080] ° [/color]"
+  ^ + res.stone + n
+  ^ + "[color=#9b3523]_/`[/color]"
+  ^ + res.wood + n
+  ^ + "[color=#404040] ≈ [/color]"
+  ^ + res.tar + n
+  ^ + "[color=#954709] :.[/color]"
+  ^ + res.bronze + n
+  ^ + "[color=#ffffff] @ [/color]"
+  ^ + res.ki + n
+  ^ + "[color=#e113df] ♦ [/color]"
+  ^ + res.crystals + n
   // }
   :?i = 6
   // {
-    var header = "KEYBOARD SHORTCUTS"
-    var n = "\n"
+    header = "# KEYBOARD SHORTCUTS "
+
+    panelContent
+  ^ = "UNDER CONSTRUCTION"
+  ^ + ""
   // }
   :?i = 7
   // {
-    var header = "SCRIPT OVERRIDES"
-    var n = "\n"
+    header = "# SCRIPT OVERRIDES "
+
+    panelContent
+  ^ = "UNDER CONSTRUCTION"
+  ^ + ""
   // }
   :?i = 8
   // {
-    var header = "SCRIPT IMPORTS"
-    var n = "\n"
+    header = "# SCRIPT IMPORTS "
+
+    panelContent
+  ^ = "UNDER CONSTRUCTION"
+  ^ + ""
   // }
   :
   // {
-    var header = "UNNAMED PANEL"
-    var n = "\n"
+    header = "# UNNAMED PANEL "
+
+    panelContent
+  ^ = "You aren't supposed to see this"
   // }
 
 
   arrayContent[i].text
-^ = header + n + n
-^ + label1 + var1
+^ = header + n + n + panelContent
 
   return
 // }
