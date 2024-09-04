@@ -184,8 +184,94 @@ func buttonToggle(button)
 
 
 
+// game data panel
+func infopanel_One(x)
+// {
+  var header = "GAME DATA"
+  var n = "\n"
 
-func mainUpdate()
+
+  pnlarray[x].text
+^ = header + n
+
+  return
+// }
+infopanel_One(0)
+
+
+
+
+// loc data panel
+// func infopanel_One()
+// {
+  /*
+  string.Format(
+  ^
+  ^)
+  */
+
+  return
+// }
+
+
+
+
+// foe data panel
+// func infopanel_One()
+// {
+  return
+// }
+
+
+
+
+// player data panel
+// func infopanel_One()
+// {
+  return
+// }
+
+
+
+
+// toolbelt panel
+// func infopanel_One()
+// {
+  return
+// }
+
+
+
+
+// inventory panel
+// func infopanel_One()
+// {
+  return
+// }
+
+
+
+
+// keyboard shortcuts panel
+// func infopanel_One()
+// {
+  return
+// }
+
+
+
+
+// script overrides panel
+// func infopanel_One()
+// {
+  return
+// }
+
+
+
+
+// script imports panel
+// func infopanel_One()
 // {
   return
 // }
