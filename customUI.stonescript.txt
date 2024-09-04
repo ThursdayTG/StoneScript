@@ -2,18 +2,20 @@
 
 /**
  * info panels
- *
  * key | panel
- *  1  |
- *  2  |
- *  3  |
- *  4  |
- *  5  |
- *  6  |
- *  7  |
- *  8  |
- *  9  |
+ *
+ *  1  | game data
+ *  2  | loc data
+ *  3  | foe data
+ *  4  | player data
+ *  5  | toolbelt
+ *  6  | inventory
+ *  7  | keyboard shortcuts
+ *  8  | script overrides
+ *  9  | script imports
  */
+
+
 
 
 var customRoot
@@ -24,12 +26,12 @@ var txtarray = []
 
 var styleButton = ui.AddStyle("
 ^══╗
-^ #║
+^  ║
 ^══╝")
 
 var stylePanel = ui.AddStyle("
 ^╔═╗
-^║#║
+^║ ║
 ^╚═╝")
 
 
@@ -50,7 +52,7 @@ func mainInit()
       buttonInit(btn, i)
       customRoot.Add(btn)
       btnarray.Add(btn)
-      btn.SetPressed(buttonToggle(i))
+      btn.SetPressed(buttonToggle)
 
 
       var pnl = ui.AddPanel()
@@ -98,7 +100,7 @@ func panelInit(panel, id)
   panel.x = 4
   panel.y = 0
 
-  panel.w = 4
+  panel.w = 10
   panel.h = 27
 
   panel.visible = false
@@ -126,7 +128,7 @@ func textInit(text, id)
     buttonCornerBottom = "═"
 
   var n = "\n"
-  var buttonContent = "  ▶  "
+  var buttonContent = " ◀▶  "
 
 
   text.text
@@ -141,10 +143,34 @@ func textInit(text, id)
 
 
 
-func buttonToggle(id)
+func buttonToggle(button)
 // {
-  pnlarray[id].visible = true
-  txtarray[id].visible = true
+  for i = 0..8
+  // {
+    ?button = btnarray[i]
+    // {
+      ?!pnlarray[i].visible  // if toggled off
+      // {
+        pnlarray[i].visible = true
+        txtarray[i].visible = true
+
+        for j = 0..8
+        // {
+          ? button ! btnarray[j]
+          // {
+            pnlarray[j].visible = false
+            txtarray[j].visible = false
+          // }
+        // }
+      // }
+      :?pnlarray[i].visible  // if toggled on
+      // {
+        pnlarray[i].visible = false
+        txtarray[i].visible = false
+        return
+      // }
+    // }
+  // }
 
   return
 // }

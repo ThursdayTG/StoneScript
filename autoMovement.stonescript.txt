@@ -5,6 +5,19 @@ func main()
   equipL Triskelion Stone
   equipR Star Stone
   return
+
+
+  ? item.GetCooldown("quarterstaff") < 1
+^ & item.CanActivate()
+^ & foe.distance > 5
+^ & pickup.distance > 5
+^ & harvest.distance > 5
+  // {
+    equip Quarterstaff
+    activate R
+  // }
+
+  return
 // }
 
 
