@@ -42,7 +42,7 @@ var customUI =
 
 // defining variable during declaration to
 // prevent the variable resetting.
-// this allows the script to update the UI
+// this also allows the script to update the UI
 // when reloading it mid-run
 // (e.g. when changing the code).
 // ...

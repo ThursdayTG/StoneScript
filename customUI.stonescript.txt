@@ -13,6 +13,13 @@
  *  7  | keyboard shortcuts
  *  8  | script overrides
  *  9  | script imports
+ *
+ *
+ * TODO
+ * fill panels, adjust width,
+ *   maybe implement headers as well
+ * add camera control buttons
+ *   with keybinds
  */
 
 
