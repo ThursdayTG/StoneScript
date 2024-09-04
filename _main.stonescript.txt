@@ -40,37 +40,12 @@ var customUI =
 ^ import Custom/customUI
 
 
-// defining variable during declaration to
-// prevent the variable resetting.
-// this also allows the script to update the UI
-// when reloading it mid-run
-// (e.g. when changing the code).
-// ...
-// this turned out to be false.
-// and the value "PlayMindStoneEdit" as shown
-// in the debug (tab) UI is inaccessible with
-// stonescript. :(
-var initialisedUI = 0
-
-
 ? totaltime = 1
 // {
-  initialisedUI = 0
-// }
-
-
-? initialisedUI = 0
-// {
-  ui.Clear()
-    // note:
-    // ui.Clear() breaks compatibility
-    // with other UI scripts
-
   disable hud
     // disables all non-stonescript UI
 
   customUI.mainInit()
-  initialisedUI++
 // }
 
 

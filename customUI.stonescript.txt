@@ -22,13 +22,19 @@
  *   with keybinds
  */
 
+/*
+```js
+```
+ */
+
 
 
 
 var customRoot
-var btnarray = []
-var pnlarray = []
-var txtarray = []
+var arrayButton = []
+var arrayPanel = []
+var arrayText = []
+var arrayContent = []
 
 
 var styleButton = ui.AddStyle("
@@ -46,7 +52,19 @@ var stylePanel = ui.AddStyle("
 
 func mainInit()
 // {
-  ?totaltime = 1
+  ? loc.loop
+  // {
+    for i = 0..8
+    // {
+      arrayButton[i].Recycle()
+      arrayPanel[i].Recycle()
+      arrayText[i].Recycle()
+      arrayContent[i].Recycle()
+    // }
+  // }
+
+
+  ? loc.loop | loc.begin
   // {
     customRoot = ui.AddPanel()
     customRoot.anchor = "top_left"
@@ -58,20 +76,25 @@ func mainInit()
       var btn = ui.AddButton()
       buttonInit(btn, i)
       customRoot.Add(btn)
-      btnarray.Add(btn)
+      arrayButton.Add(btn)
       btn.SetPressed(buttonToggle)
 
 
       var pnl = ui.AddPanel()
       panelInit(pnl, i)
       customRoot.Add(pnl)
-      pnlarray.Add(pnl)
+      arrayPanel.Add(pnl)
 
 
       var txt = ui.AddText()
       textInit(txt, i)
       customRoot.Add(txt)
-      txtarray.Add(txt)
+      arrayText.Add(txt)
+
+
+      var cnt = ui.AddText()
+      arrayPanel[i].Add(cnt)
+      arrayContent.Add(cnt)
     // }
   // }
 // }
@@ -107,7 +130,7 @@ func panelInit(panel, id)
   panel.x = 4
   panel.y = 0
 
-  panel.w = 10
+  panel.w = 50
   panel.h = 27
 
   panel.visible = false
@@ -154,26 +177,29 @@ func buttonToggle(button)
 // {
   for i = 0..8
   // {
-    ?button = btnarray[i]
+    ?button = arrayButton[i]
     // {
-      ?!pnlarray[i].visible  // if toggled off
+      ?!arrayPanel[i].visible  // if toggled off
       // {
-        pnlarray[i].visible = true
-        txtarray[i].visible = true
+        arrayPanel[i].visible = true
+        arrayText[i].visible = true
 
         for j = 0..8
         // {
-          ? button ! btnarray[j]
+          ? button ! arrayButton[j]
+          // untoggles other buttons
           // {
-            pnlarray[j].visible = false
-            txtarray[j].visible = false
+            arrayPanel[j].visible = false
+            arrayText[j].visible = false
           // }
         // }
+
+        panelSetContents(i)
       // }
-      :?pnlarray[i].visible  // if toggled on
+      :?arrayPanel[i].visible  // if toggled on
       // {
-        pnlarray[i].visible = false
-        txtarray[i].visible = false
+        arrayPanel[i].visible = false
+        arrayText[i].visible = false
         return
       // }
     // }
@@ -185,228 +211,22 @@ func buttonToggle(button)
 
 
 // game data panel
-func infopanel_One(x)
+func panelSetContents(i)
 // {
-  var header = "GAME DATA"
-  var n = "\n"
+  ? i = 0
+  // {
+    var header = "GAME DATA"
+    var n = "\n"
+  // }
+  :
+  // {
+    var header = "UNNAMED PANEL"
+    var n = "\n"
+  // }
 
 
-  pnlarray[x].text
+  arrayContent[i].text
 ^ = header + n
 
   return
 // }
-infopanel_One(0)
-
-
-
-
-// loc data panel
-// func infopanel_One()
-// {
-  /*
-  string.Format(
-  ^
-  ^)
-  */
-
-  return
-// }
-
-
-
-
-// foe data panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-
-// player data panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-
-// toolbelt panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-
-// inventory panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-
-// keyboard shortcuts panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-
-// script overrides panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-
-// script imports panel
-// func infopanel_One()
-// {
-  return
-// }
-
-
-
-/*
-func printInfo(treasureCount, treasureLimit)
-  var padding = "#"
-
-  ? treasureCount < 10
-    padding += "#"
-
-  var str = ""
-  str
-  ^ = "\n" + "##┌-─-┐"
-  ^ + "\n" + "##╞╤8╤╡"
-  ^ + "\n" + "##└┴─┴┘"
-  ^ + "\n" + padding
-  ^ + treasureCount + "/" + treasureLimit
-
-  var x = 1
-  var y = 1
-  var c = "#white"
-  >`@x@,@y@,@c@,@str@
-  /*`*
-
-/**
-  x = 1
-  y = 7
-  c = "#white"
-
-  var foeArray
-  foeArray = string.Split(foe, " ", false)
-
-  var tempArray
-  tempArray = string.Split(foe.name, " ", false)
-
-  ? tempArray.Count() >= 2
-    for i = 0..(tempArray.Count()-2)
-      foeArray[i+2] = ""
-
-  ? foeArray.Count() > 0
-    foeArray[1] = string.Join(
-    ^" ", tempArray, 0, tempArray.Count())
-
-  str = "foe:"
-  for element : foeArray
-    ? !(string.Equals(element, ""))
-      str += "\n##" + element
-
-  >`@x@,@y@,@c@,@str@
-  /*`*
-/**
-/**
-  x = 1
-  y = 7
-  c = "#white"
-  str = "foe:"
-
-  var foeArray
-  ? foe
-    foeArray = string.Split(
-    ^ foe, " " + foe.name + " ", false)
-
-    foeArray.Insert(1, foe.name)
-
-    ? foeArray[2]
-      var temp
-      temp = string.Split(foeArray[3], " ",
-true)
-      foeArray.RemoveAt(foeArray.Count()-1)
-
-
-    for element : foeArray
-      str += "\n##" + element
-
-    ? temp
-      for element : temp
-        str += "\n##" + element
-
-  >`@x@,@y@,@c@,@str@
-  /*`*
-/**
-
-
-  x = 0
-  y = 0
-  str = "totaltime:" + "\n" + "pb:"
-
-  >`@x@,@y@,@c@,@str@
-  /*`*
-
-
-  var strTotalTime
-      strTotalTime
-  ^ = time.FormatDigital(
-  ^   totaltime, true) + "s"
-  ^ + "#/#"
-  ? totaltime < 1000
-    strTotalTime += "#"
-  ? totaltime < 100
-    strTotalTime += "#"
-  ? totaltime < 10
-    strTotalTime += "#"
-  strTotalTime += totaltime + "f"
-
-  var strBestTime
-      strBestTime
-  ^ = time.FormatDigital(
-  ^   loc.bestTime, true) + "s"
-  ^ + "#/#"
-  ? loc.bestTime < 1000
-    strBestTime += "#"
-  strBestTime += loc.bestTime + "f"
-
-  str = strTotalTime + "\n" + strBestTime
-
-  x = screen.w - string.Size(strBestTime)
-
-  >`@x@,@y@,@c@,@str@
-  /*`*
-
-  x = 1
-  y = screen.h - 4
-
-  str = "item.left:##"
-
-    ^ + item.left
-    ^ + "\n"
-    ^ + "item.right:#"
-    ^ + item.right
-
-  >`@x@,@y@,@c@,@str@
-  /*`*
-  return
-
-*/
