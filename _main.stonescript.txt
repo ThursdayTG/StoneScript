@@ -36,7 +36,6 @@
 
 
 
-/*
 var customUI =
 ^ import Custom/customUI
 
@@ -71,9 +70,8 @@ var initialisedUI = 0
     // disables all non-stonescript UI
 
   customUI.mainInit()
-  // initialisedUI++
+  initialisedUI++
 // }
-*/
 
 
 

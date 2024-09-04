@@ -9,6 +9,8 @@ func mainInit()
   ?totaltime = 1
   // {
     customRoot = ui.AddPanel()
+    customRoot.anchor = "top_left"
+    customRoot.dock= "top_left"
 
     for i = 0..8
     // {
@@ -54,7 +56,7 @@ func panelInit(panel, id)
   panel.anchor = "top_left"
   panel.dock = "top_left"
 
-  panel.x = 7
+  panel.x = 10
   panel.y = 0
 
   panel.w = 4
