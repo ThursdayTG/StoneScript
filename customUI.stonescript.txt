@@ -1,8 +1,44 @@
 
 
+/**
+ * info panels
+ *
+ * key | panel
+ *  1  |
+ *  2  |
+ *  3  |
+ *  4  |
+ *  5  |
+ *  6  |
+ *  7  |
+ *  8  |
+ *  9  |
+ */
+
+
 var customRoot
 var btnarray = []
 var pnlarray = []
+var txtarray = []
+
+
+var styleButton = ui.AddStyle("
+^══╗
+^##║
+^══╝")
+
+var stylePanel = ui.AddStyle("
+^╔═╗
+^║#║
+^╚═╝")
+
+var styleText = ui.AddStyle("
+^═══
+^###
+^═══")
+
+
+
 
 func mainInit()
 // {
@@ -11,6 +47,7 @@ func mainInit()
     customRoot = ui.AddPanel()
     customRoot.anchor = "top_left"
     customRoot.dock= "top_left"
+    customRoot.visible = false
 
     for i = 0..8
     // {
@@ -19,10 +56,17 @@ func mainInit()
       customRoot.Add(btn)
       btnarray.Add(btn)
 
+
       var pnl = ui.AddPanel()
       panelInit(pnl, i)
       customRoot.Add(pnl)
       pnlarray.Add(pnl)
+
+
+      var txt = ui.AddPanel()
+      textInit(txt, i)
+      customRoot.Add(txt)
+      txtarray.Add(txt)
     // }
   // }
 // }
@@ -41,11 +85,10 @@ func buttonInit(button, id)
   button.w = 4
   button.h = 3
 
-  button.text = "->"
+  button.text = "▶ "
 
   button.visible = true
-
-  button.style = 1
+  button.style = styleButton
 // }
 
 
@@ -63,8 +106,25 @@ func panelInit(panel, id)
   panel.h = 27
 
   panel.visible = false
+  panel.style = stylePanel
+// }
 
-  panel.style = 1
+
+
+
+func textInit(text, id)
+// {
+  text.anchor = "top_left"
+  text.dock = "top_left"
+
+  text.x = 0
+  text.y = (id * 3)
+
+
+  text.text = " ▶ "
+
+  text.visible = true
+  text.style = styleText
 // }
 
 
