@@ -1,77 +1,40 @@
 
+
+var customRoot
+var btnarray = []
+var pnlarray = []
+
 func mainInit()
-// FUNCTION BEGIN
-  var tab_0 = ui.AddButton()
-  buttonInit(tab_0, 0)
+// {
+  ?totaltime = 1
+  // {
+    customRoot = ui.AddPanel()
 
-  var panel_0 = ui.AddPanel()
-  panelInit(panel_0, 0)
+    for i = 0..8
+    // {
+      var btn = ui.AddButton()
+      buttonInit(btn, i)
+      customRoot.Add(btn)
+      btnarray.Add(btn)
 
-
-  var tab_1 = ui.AddButton()
-  buttonInit(tab_1, 1)
-
-  var panel_1 = ui.AddPanel()
-  panelInit(panel_1, 1)
-
-
-  var tab_2 = ui.AddButton()
-  buttonInit(tab_2, 2)
-
-  var panel_2 = ui.AddPanel()
-  panelInit(panel_2, 2)
-
-
-  var tab_3 = ui.AddButton()
-  buttonInit(tab_3, 3)
-
-  var panel_3 = ui.AddPanel()
-  panelInit(panel_3, 3)
-
-
-  var tab_4 = ui.AddButton()
-  buttonInit(tab_4, 4)
-
-  var panel_4 = ui.AddPanel()
-  panelInit(panel_4, 4)
-
-
-  var tab_5 = ui.AddButton()
-  buttonInit(tab_5, 5)
-
-  var panel_5 = ui.AddPanel()
-  panelInit(panel_5, 5)
-
-
-  var tab_6 = ui.AddButton()
-  buttonInit(tab_6, 6)
-
-  var panel_6 = ui.AddPanel()
-  panelInit(panel_6, 6)
-
-
-  var tab_7 = ui.AddButton()
-  buttonInit(tab_7, 7)
-
-  var panel_7 = ui.AddPanel()
-  panelInit(panel_7, 7)
-// FUNCTION END
+      var pnl = ui.AddPanel()
+      panelInit(pnl, i)
+      customRoot.Add(pnl)
+      pnlarray.Add(pnl)
+    // }
+  // }
+// }
 
 
 
 
 func buttonInit(button, id)
-// FUNCTION BEGIN
+// {
   button.anchor = "top_left"
   button.dock = "top_left"
 
   button.x = 0
   button.y = (id * 3)
-
-  ?id < 4
-    button.y = button.y + 1
-  :
-    button.y = button.y + 2
 
   button.w = 4
   button.h = 3
@@ -81,13 +44,13 @@ func buttonInit(button, id)
   button.visible = true
 
   button.style = 1
-// FUNCTION END
+// }
 
 
 
 
 func panelInit(panel, id)
-// FUNCTION BEGIN
+// {
   panel.anchor = "top_left"
   panel.dock = "top_left"
 
@@ -100,15 +63,15 @@ func panelInit(panel, id)
   panel.visible = false
 
   panel.style = 1
-// FUNCTION END
+// }
 
 
 
 
 func mainUpdate()
-// FUNCTION BEGIN
+// {
   return
-// FUNCTION END
+// }
 
 
 

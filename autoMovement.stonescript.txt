@@ -1,8 +1,11 @@
 
+
 func main()
-// FUNCTION BEGIN
+// {
+  equipL Triskelion Stone
+  equipR Star Stone
   return
-// FUNCTION END
+// }
 
 
 

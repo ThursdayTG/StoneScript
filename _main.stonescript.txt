@@ -2,8 +2,10 @@
 //                                            //
 // script written for game patch:             //
 //   v3.68.1                                  //
+//                                            //
 // patch release date:                        //
 //   2024-08-26                               //
+//                                            //
 //                                            //
 // author:                                    //
 //   Thursday, the German one                 //
@@ -13,6 +15,12 @@
 //   Ket                                      //
 //   ... and the rest of the SSRPG Discord    //
 //                                            //
+//                                            //
+//                                            //
+//                                            //
+//  P.S.:                                     //
+//    You will not deny me my curly braces.   //
+//                                            //
 ////////////////////////////////////////////////
 
 
@@ -21,7 +29,9 @@
 // prevents script from running in
 // safe and special areas
 ? loc.stars < 3
+// {
   return
+// }
 
 
 
@@ -39,16 +49,19 @@ var customUI =
 // ...
 // this turned out to be false.
 // and the value "PlayMindStoneEdit" as shown
-// in the debug UI is inaccessible with
+// in the debug (tab) UI is inaccessible with
 // stonescript. :(
 var initialisedUI = 0
 
 
-? loc.begin | loc.loop
+? totaltime = 1
+// {
   initialisedUI = 0
+// }
 
 
 ? initialisedUI = 0
+// {
   ui.Clear()
     // note:
     // ui.Clear() breaks compatibility
@@ -59,6 +72,7 @@ var initialisedUI = 0
 
   customUI.mainInit()
   // initialisedUI++
+// }
 */
 
 
@@ -66,30 +80,42 @@ var initialisedUI = 0
 
 var autoCombat =
 ^ import Custom/autoCombat
+var locDefaultOverride = 1
+  // if locDefaultOverride is enabled,
+  // autoCombat will always choose
+  // the generalised default function
+  // instead of the one optimised for
+  // the currently played location.
+
 
 var autoLoot =
 ^ import Custom/autoLoot
 var harvestOverride = 1
-  // if harvestOverride is enabled, the player
-  // won't stop to harvest with shovel & hatchet
-  // in their respective locations
+  // if harvestOverride is enabled,
+  // the player won't stop to harvest
+  // with shovel & hatchet in their
+  // respective locations.
+
 
 var autoMovement =
 ^ import Custom/autoMovement
+
 
 var autoQuit =
 ^ import Custom/autoQuit
 
 
+
+
 func main()
-// FUNCTION BEGIN
+// {
   // customUI.mainUpdate()
 
   autoMovement.main()
   autoLoot.main(harvestOverride)
-  autoCombat.main()
+  autoCombat.main(locDefaultOverride)
   autoQuit.main()
-// FUNCTION END
+// }
 
 
 main()

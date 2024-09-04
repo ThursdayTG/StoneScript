@@ -1,21 +1,159 @@
 
-func main()
-// FUNCTION BEGIN
+
+func main(locDefaultOverride)
+// {
+  ? locDefaultOverride
+  // {
+    locDefault()
+  // }
+  :?loc.name = Rocky Plateau
+  // {
+    locPlateau()
+  // }
+  :?loc.name = Deadwood Canyon
+  // {
+    locCanyon()
+  // }
+  :?loc.name = Caves of Fear
+  // {
+    locCaves()
+  // }
+  :?loc.name = Mushroom Forest
+  // {
+    locForest()
+  // }
+  :?loc.name = Haunted Halls
+  // {
+    locHalls()
+  // }
+  :?loc.name = Boiling Mine
+  // {
+    locMine()
+  // }
+  :?loc.name = Icy Ridge
+  // {
+    locRidge()
+  // }
+  :?loc.name = Temple
+  // {
+    locTemple()
+  // }
+  :
+  // {
+    locDefault()
+  // }
+
   return
-// FUNCTION END
+// }
+
+
+
+
+// Rocky Plateau
+func locPlateau()
+// {
+  return
+// }
+
+
+
+
+// Deadwood Canyon
+func locCanyon()
+// {
+  return
+// }
+
+
+
+
+// Caves of Fear
+func locCaves()
+// {
+  return
+// }
+
+
+
+
+// Mushroom Forest
+func locForest()
+// {
+  return
+// }
+
+
+
+
+// Haunted Halls
+func locHalls()
+// {
+  return
+// }
+
+
+
+
+// Boiling Mine
+func locMine()
+// {
+  return
+// }
+
+
+
+
+// Icy Ridge
+func locRidge()
+// {
+  return
+// }
+
+
+
+
+// Temple
+func locTemple()
+// {
+  return
+// }
+
+
+
+
+// Unspecified Location
+// potentially useable if a new location
+// gets added in an update or to use as
+// a general purpose function
+func locDefault()
+// {
+  var combatRange = 20
+
+  ?foe.distance <= combatRange
+    equipL vigor wand dL
+    equipR vigor sword dL
+  return
+// }
 
 
 
 
 func autoPotion()
-// FUNCTION BEGIN
+// {
   ?  item.potion = potion_berserk
+  // {
     return
+  // }
   :? item.potion = potion_cleansing
+  // {
     return
+  // }
   :? item.potion = potion_defensive
+  // {
     return
+  // }
   :? item.potion = potion_healing
+  // {
     ? foe.buffs.string = "mirror"
       return
 
@@ -26,19 +164,32 @@ func autoPotion()
       activate potion
 
     return
+  // }
   :? item.potion = potion_invisibility
+  // {
     return
+  // }
   :? item.potion = potion_lightning
+  // {
     return
+  // }
   :? item.potion = potion_lucky
+  // {
     return
+  // }
   :? item.potion = potion_strength
+  // {
     return
+  // }
   :? item.potion = potion_vampiric
+  // {
     return
+  // }
   :
+  // {
     return
-// FUNCTION END
+  // }
+// }
 
 
 

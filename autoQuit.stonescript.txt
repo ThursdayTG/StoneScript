@@ -1,9 +1,10 @@
 
+
 func main()
-// FUNCTION BEGIN
+// {
   ? item.GetTreasureCount()
 ^ = item.GetTreasureLimit()
     loc.Leave()
   :
     return
-// FUNCTION END
+// }
