@@ -24,18 +24,13 @@ var txtarray = []
 
 var styleButton = ui.AddStyle("
 ^══╗
-^##║
+^ #║
 ^══╝")
 
 var stylePanel = ui.AddStyle("
 ^╔═╗
 ^║#║
 ^╚═╝")
-
-var styleText = ui.AddStyle("
-^═══
-^###
-^═══")
 
 
 
@@ -55,6 +50,7 @@ func mainInit()
       buttonInit(btn, i)
       customRoot.Add(btn)
       btnarray.Add(btn)
+      btn.SetPressed(buttonToggle(i))
 
 
       var pnl = ui.AddPanel()
@@ -63,7 +59,7 @@ func mainInit()
       pnlarray.Add(pnl)
 
 
-      var txt = ui.AddPanel()
+      var txt = ui.AddText()
       textInit(txt, i)
       customRoot.Add(txt)
       txtarray.Add(txt)
@@ -99,7 +95,7 @@ func panelInit(panel, id)
   panel.anchor = "top_left"
   panel.dock = "top_left"
 
-  panel.x = 10
+  panel.x = 4
   panel.y = 0
 
   panel.w = 4
@@ -120,11 +116,37 @@ func textInit(text, id)
   text.x = 0
   text.y = (id * 3)
 
+  var buttonBorder = "════"
+  var buttonCornerTop = "╝"
+  ?id = 0
+    buttonCornerTop = "═"
 
-  text.text = " ▶ "
+  var buttonCornerBottom = "╗"
+  ?id = 8
+    buttonCornerBottom = "═"
 
-  text.visible = true
-  text.style = styleText
+  var n = "\n"
+  var buttonContent = "  ▶  "
+
+
+  text.text
+^ = buttonBorder + buttonCornerTop + n
+^ + buttonContent + n
+^ + buttonBorder + buttonCornerBottom + n
+
+
+  text.visible = false
+// }
+
+
+
+
+func buttonToggle(id)
+// {
+  pnlarray[id].visible = true
+  txtarray[id].visible = true
+
+  return
 // }
 
 
@@ -134,7 +156,6 @@ func mainUpdate()
 // {
   return
 // }
-
 
 
 

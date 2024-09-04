@@ -76,8 +76,8 @@ var initialisedUI = 0
 
 
 
-var autoCombat =
-^ import Custom/autoCombat
+var autoCombat
+^ = import Custom/autoCombat
 var locDefaultOverride = 1
   // if locDefaultOverride is enabled,
   // autoCombat will always choose
@@ -86,8 +86,8 @@ var locDefaultOverride = 1
   // the currently played location.
 
 
-var autoLoot =
-^ import Custom/autoLoot
+var autoLoot
+^ = import Custom/autoLoot
 var harvestOverride = 1
   // if harvestOverride is enabled,
   // the player won't stop to harvest
@@ -95,12 +95,12 @@ var harvestOverride = 1
   // respective locations.
 
 
-var autoMovement =
-^ import Custom/autoMovement
+var autoMovement
+^ = import Custom/autoMovement
 
 
-var autoQuit =
-^ import Custom/autoQuit
+var autoQuit
+^ = import Custom/autoQuit
 
 
 
