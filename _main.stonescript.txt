@@ -84,7 +84,7 @@ func main()
 // {
   // customUI.mainUpdate()
 
-  autoMovement.main()
+  autoMovement.main(harvestOverride)
   autoLoot.main(harvestOverride)
   autoCombat.main(locDefaultOverride)
   autoQuit.main()

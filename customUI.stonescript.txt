@@ -159,11 +159,11 @@ func textInit(text, id)
 
   var buttonBorder = "════"
   var buttonCornerTop = "╝"
-  ?id = 0
-    buttonCornerTop = "═"
-
   var buttonCornerBottom = "╗"
-  ?id = 8
+
+  ? id = 0
+    buttonCornerTop = "═"
+  :?id = 8
     buttonCornerBottom = "═"
 
   var n = "\n"
@@ -217,7 +217,7 @@ func buttonToggle(button)
           // }
         // }
 
-        panelContentSet(i)
+        panelContentInit(i)
       // }
       :?arrayPanel[i].visible  // if toggled on
       // {
@@ -234,7 +234,7 @@ func buttonToggle(button)
 
 
 
-func panelContentSet(i)
+func panelContentInit(i)
 // {
   var n = "\n"
   var header = ""

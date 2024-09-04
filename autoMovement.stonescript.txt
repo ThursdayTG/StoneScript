@@ -13,7 +13,9 @@ func main()
 ^ & item.GetCooldown("quarterstaff") < 1
 ^ & foe.distance > dashRange
 ^ & pickup.distance > dashRange
-^ & harvest.distance > dashRange
+^ & (this.harvestOverride = 1
+^ | (this.harvestOverride = 0
+^ &  harvest.distance > dashRange))
   // {
     equip Quarterstaff
     activate R
