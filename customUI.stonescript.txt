@@ -22,11 +22,6 @@
  *   with keybinds
  */
 
-/*
-```js
-```
- */
-
 
 
 
@@ -270,8 +265,19 @@ func panelContentInit(i)
     header = "# PLAYER DATA "
 
     panelContent
-  ^ = "UNDER CONSTRUCTION"
-  ^ + ""
+  ^ = "name: " + player.name + n
+  ^ + "hp: " + hp + "/" + maxhp + n
+  ^ + "armour: " + armor.f + "/" + maxarmor + n
+  ^ + "position & direction: "
+  ^ + "x" + pos.x + ", "
+  ^ + "y" + pos.y + ", "
+  ^ + "z" + pos.z + ", "
+  ^ + "d" + player.direction + n
+  ^ + "item.potion: " + item.potion + n
+  ^ + "item.left: " + item.left + n
+  ^ + "item.right: " + item.right + n
+  ^ + "buffs.string: " + buffs.string + n
+  ^ + "debuffs.string: " + debuffs.string + n
   // }
   :?i = 4
   // {
