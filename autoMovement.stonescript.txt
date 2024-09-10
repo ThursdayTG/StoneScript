@@ -1,9 +1,9 @@
 
 
-func main()
+func main(harvestOverride)
 // {
   equipL Triskelion Stone
-  equipR Star Stone
+  equipR Cultist Mask
 
 
   var dashRange = 5
@@ -13,8 +13,8 @@ func main()
 ^ & item.GetCooldown("quarterstaff") < 1
 ^ & foe.distance > dashRange
 ^ & pickup.distance > dashRange
-^ & (this.harvestOverride = 1
-^ | (this.harvestOverride = 0
+^ & (harvestOverride = 1
+^ | (harvestOverride = 0
 ^ &  harvest.distance > dashRange))
   // {
     equip Quarterstaff

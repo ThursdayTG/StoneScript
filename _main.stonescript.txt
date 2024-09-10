@@ -40,7 +40,7 @@ var customUI =
 ^ import Custom/customUI
 
 
-? totaltime = 1
+? time <= 1
 // {
   disable hud
     // disables all non-stonescript UI
@@ -53,7 +53,7 @@ var customUI =
 
 var autoCombat
 ^ = import Custom/autoCombat
-var locDefaultOverride = 1
+var locDefaultOverride = 0
   // if locDefaultOverride is enabled,
   // autoCombat will always choose
   // the generalised default function
@@ -63,7 +63,7 @@ var locDefaultOverride = 1
 
 var autoLoot
 ^ = import Custom/autoLoot
-var harvestOverride = 1
+var harvestOverride = 0
   // if harvestOverride is enabled,
   // the player won't stop to harvest
   // with shovel & hatchet in their

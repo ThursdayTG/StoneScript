@@ -2,6 +2,8 @@
 
 func main(locDefaultOverride)
 // {
+  // autoDash()
+
   ? locDefaultOverride
   // {
     locDefault()
@@ -26,7 +28,7 @@ func main(locDefaultOverride)
   // {
     locHalls()
   // }
-  :?loc.name = Boiling Mine
+  :?loc = bronze_mine | loc = bronze_guardian
   // {
     locMine()
   // }
@@ -97,7 +99,26 @@ func locHalls()
 // Boiling Mine
 func locMine()
 // {
-  return
+  ? totaltime = 1
+  // {
+    // berserk potion
+    brew wood + bronze
+  // }
+
+  ? totaltime < 10
+^ & item.CanActivate()
+  // {
+    activate potion
+  // }
+
+
+  var combatRange = 23
+
+  ? ai.enabled
+^ & foe.distance <= combatRange
+  // {
+    equip Æther Crossbow D
+  // }
 // }
 
 

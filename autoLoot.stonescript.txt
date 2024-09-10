@@ -21,7 +21,7 @@ func autoPickup()
   // }
   :
   // {
-    pickupRange = 5
+    pickupRange = 3
   // }
 
 
