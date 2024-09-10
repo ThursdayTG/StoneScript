@@ -2,7 +2,7 @@
 
 func main(locDefaultOverride)
 // {
-  // autoDash()
+  autoDash()
 
   ? locDefaultOverride
   // {
@@ -45,7 +45,32 @@ func main(locDefaultOverride)
     locDefault()
   // }
 
+
   return
+// }
+
+
+
+
+func autoDash()
+// {
+  var engagementRangeMax = 17
+  var engagementRangeMin = 11
+
+  ? foe.distance <= engagementRangeMax
+^ & foe.distance >= engagementRangeMin
+  // {
+    ? item.CanActivate()
+  ^ & item.GetCooldown("bash") < 1
+    // {
+      equipR Bashing Shield
+    // }
+    :?item.CanActivate()
+  ^ & item.GetCooldown("dash") < 1
+    // {
+      equipR Dashing Shield
+    // }
+  // }
 // }
 
 
@@ -112,12 +137,34 @@ func locMine()
   // }
 
 
-  var combatRange = 23
+  var engagementRange
 
-  ? ai.enabled
-^ & foe.distance <= combatRange
+  ?(item.GetCooldown("bash") > 0
+^ & item.GetCooldown("dash") > 0)
+^ | foe = bronze_guardian
+  // {
+    engagementRange = 23
+  // }
+  :
+  // {
+    engagementRange = 11
+  // }
+
+
+  // `?!ai.paused` ensures that the cultist
+  // mask stays up during cutscenes,
+  // e.g. when a boss appears
+  ? foe.distance <= engagementRange
+^ &!ai.paused
   // {
     equip Æther Crossbow D
+  // }
+
+
+  ? item.GetCooldown("bash") = 270
+^ | item.GetCooldown("dash") = 45
+  // {
+    equipR Æether Shield A
   // }
 // }
 
